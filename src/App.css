@@ -1,0 +1,149 @@
+body {
+  /* display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0; */
+}
+
+.container {
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+    "Lucida Sans", Arial, sans-serif;
+  background: linear-gradient(to right, #ff7e5f, #feb47b);
+  border-radius: 10px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+  padding: 2rem;
+  text-align: center;
+}
+
+.info {
+  margin: 0px auto;
+  height: 100%;
+  width: 100%;
+  max-width: 580px;
+
+  h1 {
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+  }
+
+  h3 {
+    color: black;
+    font-size: 1.5rem;
+    margin-top: 0.5rem;
+  }
+
+  .profile_picture img {
+    border-radius: 9999px;
+    object-fit: cover;
+    height: 10rem;
+    width: 10rem;
+  }
+}
+
+.buttons {
+  margin: 0px auto;
+  height: 100%;
+  width: 100%;
+  max-width: 580px;
+
+  .button_wrapper {
+    color: rgb(13, 26, 21);
+    margin: 1rem 0;
+
+    .button {
+      cursor: pointer;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: white;
+      border: 3px solid black;
+      border-radius: 25px;
+      transition: box-shadow 0.25s cubic-bezier(0.08, 0.59, 0.29, 0.99),
+        border-color 0.25s cubic-bezier(0.08, 0.59, 0.29, 0.99),
+        transform 0.25s cubic-bezier(0.08, 0.59, 0.29, 0.99),
+        background-color 0.25s cubic-bezier(0.08, 0.59, 0.29, 0.99);
+      position: relative;
+      min-height: 64px;
+
+      &:hover {
+        background-color: transparent;
+        border-color: rgb(243, 243, 241);
+        border-width: 3px;
+        color: rgb(243, 243, 241);
+      }
+
+      .label {
+        padding: 0 20px;
+
+        .hub {
+          background-color: rgb(209, 158, 17);
+          border-radius: 2px;
+          padding: 1px;
+        }
+      }
+
+      .dotted_menu {
+        font-family: "Material Icons";
+        font-size: larger;
+        position: absolute;
+        right: 6px;
+        top: 0;
+        margin: 20px 0;
+        height: 26px;
+        width: 26px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        &:hover {
+          background-color: rgba(1, 1, 1, 0.25);
+          border-radius: 9999px;
+        }
+
+        &::before {
+          content: "\e5d4";
+        }
+      }
+    }
+  }
+}
+
+.footer {
+  margin: 0px auto;
+  height: 100%;
+  width: 100%;
+  max-width: 580px;
+
+  .socials {
+    display: flex;
+    justify-content: center;
+
+    .twitter,
+    .facebook,
+    .spotify {
+      cursor: pointer;
+      padding: 0.5rem;
+    }
+  }
+
+  svg {
+    fill: rgb(255, 255, 255);
+    width: 32px;
+    height: 32px;
+  }
+
+  h6 {
+    cursor: default;
+    margin-bottom: 0.25rem;
+  }
+
+  .image_wrapper {
+    img {
+      border-radius: 9999px;
+      object-fit: cover;
+      height: 4rem;
+      width: 4rem;
+    }
+  }
+}
