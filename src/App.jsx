@@ -12,7 +12,7 @@ function App() {
     <div className="container">
       <section className="info">
         <div className="profile_picture">
-          <img src="/borat.avif" />
+          <img src="https://raw.githubusercontent.com/earthddx/linktreedupe/refs/heads/main/public/borat.avif" />
         </div>
         <h1>Artem Murzo</h1>
         <h3>Niiice!</h3>
@@ -127,7 +127,7 @@ function App() {
         </div>
         <h6>🥦 not created with linktree, i don't have money</h6>
         <div className="image_wrapper">
-          <img src="/ples.jpg" />
+          <img src="https://raw.githubusercontent.com/earthddx/linktreedupe/refs/heads/main/public/ples.jpg" />
         </div>
       </section>
     </div>
