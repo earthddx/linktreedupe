@@ -3,8 +3,8 @@ import "./App.css";
 import ReactPlayer from "react-player/lazy";
 
 function App() {
-  const [isBeggerCount, setBeggerCount] = React.useState(0);
-  const isBeggerActive = isBeggerCount === 3;
+  const [beggerCount, setBeggerCount] = React.useState(0);
+  const isBeggerActive = beggerCount === 3;
 
   const onDotMenuClick = React.useCallback((event) => {
     event.preventDefault();
@@ -156,7 +156,16 @@ function App() {
             </div>
             <h6>🥦 not created with linktree, i don't have money</h6>
             <div className="image_wrapper" onClick={onBeggerClick}>
-              <img src="https://raw.githubusercontent.com/earthddx/linktreedupe/refs/heads/main/public/ples.jpg" />
+            <img src="https://raw.githubusercontent.com/earthddx/linktreedupe/refs/heads/main/public/ples.jpg" />
+              <p>
+                {beggerCount === 2
+                  ? "1"
+                  : beggerCount === 1
+                  ? "2"
+                  : beggerCount === 0
+                  ? "3"
+                  : "1"}
+              </p>
             </div>
           </section>
         </>

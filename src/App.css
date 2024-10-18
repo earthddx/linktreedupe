@@ -143,17 +143,36 @@ body {
     left: 0;
     right: 0;
     cursor: pointer;
+
+    p {
+      position: absolute;
+      top: -0.75em;
+      left: 0;
+      right: 0;
+      color: rgb(240, 37, 105);
+      font-size: 3em;
+      opacity: 0;
+      pointer-events: none;
+    }
+
     img {
       transition: transform 0.2s ease;
       border-radius: 9999px;
       object-fit: cover;
       height: 4rem;
       width: 4rem;
+      transition: transform 0.2s, border-width 0.2s ease;
+      
 
       &:hover {
-        transform: scale(1.2);
+        animation: radiate 1.5s infinite ease-in-out;
+        /* transform: scale(1.2); */
         padding: 0.25rem;
         border: 5px solid rgb(240, 37, 105);
+
+        + p {
+          opacity: 1;
+        }
       }
     }
   }
@@ -175,7 +194,7 @@ body {
     left: 0;
     right: 0;
     top: 0.5em;
-    pointer-events: none
+    pointer-events: none;
   }
 }
 
@@ -192,5 +211,21 @@ body {
   }
   60% {
     transform: translateY(-15px);
+  }
+}
+
+
+@keyframes radiate {
+  0% {
+    border-width: 5px;
+    transform: scale(1);
+  }
+  50% {
+    border-width: 15px;
+    transform: scale(1.1); /* Optional slight zoom effect */
+  }
+  100% {
+    border-width: 5px;
+    transform: scale(1);
   }
 }
