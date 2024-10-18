@@ -162,14 +162,12 @@ body {
       height: 4rem;
       width: 4rem;
       transition: transform 0.2s, border-width 0.2s ease;
-      
+      box-shadow: none;
+      padding: 0.25rem;
 
       &:hover {
         animation: radiate 1.5s infinite ease-in-out;
-        /* transform: scale(1.2); */
-        padding: 0.25rem;
-        border: 5px solid rgb(240, 37, 105);
-
+        
         + p {
           opacity: 1;
         }
@@ -217,15 +215,15 @@ body {
 
 @keyframes radiate {
   0% {
-    border-width: 5px;
+    box-shadow: 0 0 0 5px  rgb(240, 37, 105);
     transform: scale(1);
   }
   50% {
-    border-width: 15px;
-    transform: scale(1.1); /* Optional slight zoom effect */
+    box-shadow: 0 0 0 15px  rgb(240, 37, 105);
+    transform: scale(1.1);
   }
   100% {
-    border-width: 5px;
+    box-shadow: 0 0 0 5px  rgb(240, 37, 105);
     transform: scale(1);
   }
 }
