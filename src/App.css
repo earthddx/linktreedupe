@@ -147,3 +147,36 @@ body {
     }
   }
 }
+
+
+.begger_ples {
+  background: 
+    linear-gradient(45deg, #ff7e5f, #feb47b),
+    linear-gradient(135deg, #6a11cb, #2575fc),
+    linear-gradient(225deg, #43cea2, #185a9d);
+  background-blend-mode: screen;
+
+  .bounce{
+    display: inline-block;
+    animation: bounce 1s infinite;
+    font-size: 7em;
+    font-weight: bold;
+    color: #ff3e3e;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: .5em;
+  }
+}
+
+@keyframes bounce {
+  0%, 20%, 50%, 80%, 100% {
+    transform: translateY(0);
+  }
+  40% {
+    transform: translateY(-30px);
+  }
+  60% {
+    transform: translateY(-15px);
+  }
+}
