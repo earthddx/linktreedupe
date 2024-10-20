@@ -2,9 +2,12 @@ import React from "react";
 import "./App.css";
 import ReactPlayer from "react-player/lazy";
 
+const TIMER = 5;
+
 function App() {
-  const [beggerCount, setBeggerCount] = React.useState(0);
-  const isBeggerActive = beggerCount === 3;
+  const [beggarCount, setBeggarCount] = React.useState(TIMER);
+  const isBeggarActive = beggarCount === 0;
+  const intervalRef = React.useRef();
 
   const onDotMenuClick = React.useCallback((event) => {
     event.preventDefault();
@@ -12,15 +15,29 @@ function App() {
     alert("ты че бля");
   }, []);
 
-  const onBeggerClick = (event) => {
-    setBeggerCount((prev) => prev + 1);
-  };
+  const onBeggarLeave = React.useCallback((event) => {
+    clearInterval(intervalRef.current);
+    setBeggarCount(TIMER);
+  }, []);
+  const onBeggarEnter = React.useCallback((event) => {
+    setBeggarCount(TIMER);
+    intervalRef.current = setInterval(() => {
+      setBeggarCount((prev) => {
+        if (prev <= 1) {
+          clearInterval(intervalRef.current);
+          return 0;
+        } else {
+          return prev - 1;
+        }
+      });
+    }, 1000);
+  }, []);
 
   return (
-    <div className="container" style={isBeggerActive ? { padding: 0 } : {}}>
-      {isBeggerActive ? (
-        <section className="begger_ples">
-          <div className="begger_big">
+    <div className="container" style={isBeggarActive ? { padding: 0 } : {}}>
+      {isBeggarActive ? (
+        <section className="beggar_ples">
+          <div className="beggar_big">
             <span className="bounce">send help ples</span>
             <ReactPlayer
               url={"https://www.youtube.com/watch?v=XJFFgc9jZz0"}
@@ -155,17 +172,13 @@ function App() {
               </div>
             </div>
             <h6>🥦 not created with linktree, i don't have money</h6>
-            <div className="image_wrapper" onClick={onBeggerClick}>
-            <img src="https://raw.githubusercontent.com/earthddx/linktreedupe/refs/heads/main/public/ples.jpg" />
-              <p>
-                {beggerCount === 2
-                  ? "1"
-                  : beggerCount === 1
-                  ? "2"
-                  : beggerCount === 0
-                  ? "3"
-                  : "1"}
-              </p>
+            <div
+              className="image_wrapper"
+              onMouseEnter={onBeggarEnter}
+              onMouseLeave={onBeggarLeave}
+            >
+              <img src="https://raw.githubusercontent.com/earthddx/linktreedupe/refs/heads/main/public/ples.jpg" />
+              <p>{beggarCount}</p>
             </div>
           </section>
         </>
